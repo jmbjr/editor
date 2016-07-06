@@ -139,7 +139,8 @@ public class ProjectEditor extends ToolkitEditorWindow implements InternalFrameL
      */
     @Override
     public boolean save() {
-        return project.save();
+//        return project.save();
+        return save();
     }
 
     /**
@@ -150,7 +151,7 @@ public class ProjectEditor extends ToolkitEditorWindow implements InternalFrameL
      */
     @Override
     public boolean saveAs(File file) {
-        project.setFile(file);
+//        project.setFile(file);
         return save();
     }
 

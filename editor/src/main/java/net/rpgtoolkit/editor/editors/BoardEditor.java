@@ -252,16 +252,16 @@ public class BoardEditor extends ToolkitEditorWindow {
   public boolean save() {
     boolean success = false;
     
-    if (board.getFile() == null) {
-      File file = MainWindow.getInstance().saveByType(Board.class);
-      
-      if (file != null) {
-        success = board.saveAs(file);
-        setTitle("Editing - " + file.getName());
-      }
-    } else {
-      success = board.save();
-    }
+//    if (board.getFile() == null) {
+//      File file = MainWindow.getInstance().saveByType(Board.class);
+//      
+//      if (file != null) {
+//        success = board.saveAs(file);
+//        setTitle("Editing - " + file.getName());
+//      }
+//    } else {
+//      success = board.save();
+//    }
     
     return success;
   }
@@ -274,7 +274,7 @@ public class BoardEditor extends ToolkitEditorWindow {
    */
   @Override
   public boolean saveAs(File file) {
-    board.setFile(file);
+//    board.setFile(file);
     return save();
   }
 

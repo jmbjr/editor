@@ -151,7 +151,8 @@ public class CharacterEditor extends ToolkitEditorWindow implements InternalFram
    */
   @Override
   public boolean save() {
-    return this.player.saveBinary();
+//    return this.player.saveBinary();
+    return false;
   }
 
   /**
@@ -162,7 +163,7 @@ public class CharacterEditor extends ToolkitEditorWindow implements InternalFram
    */
   @Override
   public boolean saveAs(File file) {
-    player.setFile(file);
+//    player.setFile(file);
 
     return save();
   }

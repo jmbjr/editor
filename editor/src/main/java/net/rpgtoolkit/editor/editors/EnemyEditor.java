@@ -124,7 +124,8 @@ public class EnemyEditor extends ToolkitEditorWindow implements InternalFrameLis
    */
   @Override
   public boolean save() {
-    return this.enemy.save();
+//    return this.enemy.save();
+    return false;
   }
 
   /**
@@ -135,7 +136,7 @@ public class EnemyEditor extends ToolkitEditorWindow implements InternalFrameLis
    */
   @Override
   public boolean saveAs(File file) {
-    enemy.setFile(file);
+//   enemy.setFile(file);
 
     return save();
   }

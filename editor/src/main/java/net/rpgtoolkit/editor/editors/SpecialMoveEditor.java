@@ -102,24 +102,25 @@ public class SpecialMoveEditor extends ToolkitEditorWindow implements InternalFr
     } catch (ParseException ex) {
       Logger.getLogger(SpecialMoveEditor.class.getName()).log(Level.SEVERE, null, ex);
     }
-    this.move.setName(moveName.getText());
-    this.move.setDescription(description.getText());
-    this.move.setMpCost(mpCost.getValue());
-    this.move.setFightPower(fightPower.getValue());
-    this.move.setRpgcodeProgram(program.getText());
-    this.move.setMpDrainedFromTarget(mpRemovedTarget.getValue());
-    this.move.setAssociatedStatusEffect(statusEffect.getText());
-    this.move.setAssociatedAnimation(animation.getText());
-    this.move.setCanUseInBattle(battleDriven.isSelected());
-    this.move.setCanUseInMenu(boardDriven.isSelected());
-    if (this.move.getFile() == null) {
-      boolean success = this.move.saveAs(
-              mainWindow.saveByType(SpecialMove.class));
-      this.setTitle("Editing Special Move - " + this.move.toString());
-      return success;
-    } else {
-      return this.move.save();
-    }
+//    this.move.setName(moveName.getText());
+//    this.move.setDescription(description.getText());
+//    this.move.setMpCost(mpCost.getValue());
+//    this.move.setFightPower(fightPower.getValue());
+//    this.move.setRpgcodeProgram(program.getText());
+//    this.move.setMpDrainedFromTarget(mpRemovedTarget.getValue());
+//    this.move.setAssociatedStatusEffect(statusEffect.getText());
+//    this.move.setAssociatedAnimation(animation.getText());
+//    this.move.setCanUseInBattle(battleDriven.isSelected());
+//    this.move.setCanUseInMenu(boardDriven.isSelected());
+//    if (this.move.getFile() == null) {
+//      boolean success = this.move.saveAs(
+//              mainWindow.saveByType(SpecialMove.class));
+//      this.setTitle("Editing Special Move - " + this.move.toString());
+//      return success;
+//    } else {
+//      return this.move.save();
+//    }
+        return true;
   }
   
   /**
@@ -130,7 +131,7 @@ public class SpecialMoveEditor extends ToolkitEditorWindow implements InternalFr
    */
   @Override
   public boolean saveAs(File file) {
-    move.setFile(file);
+//    move.setFile(file);
     
     return save();
   }
