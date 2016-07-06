@@ -231,7 +231,8 @@ public class SpecialMoveEditor extends ToolkitEditorWindow implements InternalFr
     statusEffectButton.addActionListener(new ActionListener() {
       @Override
       public void actionPerformed(ActionEvent e) {
-        String loc = mainWindow.browseByTypeRelative(StatusEffect.class);
+        //String loc = mainWindow.browseByTypeRelative(StatusEffect.class);
+        String loc = null;
         if (loc != null) {
           statusEffect.setText(loc);
         }

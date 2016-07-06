@@ -1161,7 +1161,8 @@ public class EnemyEditor extends ToolkitEditorWindow implements InternalFrameLis
   }
 
   private String browseSpecialMove() {
-    return mainWindow.browseByTypeRelative(SpecialMove.class);
+//    return mainWindow.browseByTypeRelative(SpecialMove.class);
+    return null;
   }
 
   private String getSpecialMoveText(String loc) {

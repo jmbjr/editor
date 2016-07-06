@@ -1199,7 +1199,8 @@ public class CharacterEditor extends ToolkitEditorWindow implements InternalFram
   }
 
   private String browseSpecialMove() {
-    return mainWindow.browseByTypeRelative(SpecialMove.class);
+//    return mainWindow.browseByTypeRelative(SpecialMove.class);
+    return null;
   }
 
   private String getSpecialMoveText(String loc) {
