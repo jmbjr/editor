@@ -22,6 +22,7 @@ import javax.swing.event.InternalFrameListener;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import net.rpgtoolkit.common.assets.Animation;
+import net.rpgtoolkit.common.assets.AssetDescriptor;
 import net.rpgtoolkit.common.assets.Enemy;
 import net.rpgtoolkit.common.assets.Program;
 import net.rpgtoolkit.common.assets.SpecialMove;
@@ -98,7 +99,7 @@ public class EnemyEditor extends ToolkitEditorWindow implements InternalFrameLis
   public EnemyEditor() {
     super("New Enemy", true, true, true, true);
 
-    this.enemy = new Enemy();
+    this.enemy = new Enemy(null);
     this.setVisible(true);
   }
 
@@ -1182,7 +1183,9 @@ public class EnemyEditor extends ToolkitEditorWindow implements InternalFrameLis
               + sep + loc);
       if (f.canRead()) {
 //                out.println("loaded special move from location " + loc + "!");
-        return new SpecialMove(f);
+        AssetDescriptor uriFile = new AssetDescriptor(
+                f.toURI());
+        return new SpecialMove(uriFile);
       }
     }
     return null;

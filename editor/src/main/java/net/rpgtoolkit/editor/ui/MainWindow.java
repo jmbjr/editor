@@ -14,6 +14,8 @@ import java.awt.Rectangle;
 import java.beans.PropertyVetoException;
 import java.io.File;
 import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JDesktopPane;
@@ -27,6 +29,7 @@ import javax.swing.JTextArea;
 import javax.swing.event.InternalFrameEvent;
 import javax.swing.event.InternalFrameListener;
 import javax.swing.filechooser.FileNameExtensionFilter;
+import net.rpgtoolkit.common.assets.AbstractAsset;
 import net.rpgtoolkit.common.assets.Animation;
 import net.rpgtoolkit.common.assets.AssetDescriptor;
 import net.rpgtoolkit.common.assets.AssetException;
@@ -412,7 +415,7 @@ public class MainWindow extends JFrame implements InternalFrameListener {
               PropertiesSingleton.getProjectsDirectory(), projectName);
 
       if (result) {
-        Project project = new Project(PropertiesSingleton.getProjectsDirectory() + File.separator
+        Project project = new Project(null,PropertiesSingleton.getProjectsDirectory() + File.separator
                 + PropertiesSingleton.getProperty("toolkit.directory.main"), projectName);
 
         try {
@@ -522,14 +525,9 @@ public class MainWindow extends JFrame implements InternalFrameListener {
       if (selectedFile.canRead()) {
         Board board;
 
-        if (selectedFile.getName().endsWith(".brd")) {
-          board = new Board(selectedFile);
-          board.openBinary();
-        } else {
-          AssetHandle handle = AssetManager.getInstance().deserialize(
-                  new AssetDescriptor(fileChooser.getSelectedFile().toURI()));
-          board = (Board) handle.getAsset();
-        }
+        AssetHandle handle = AssetManager.getInstance().deserialize(
+                new AssetDescriptor(fileChooser.getSelectedFile().toURI()));
+        board = (Board) handle.getAsset();
 
         boardEditor = new BoardEditor(board);
       } else {
@@ -551,7 +549,9 @@ public class MainWindow extends JFrame implements InternalFrameListener {
    * Creates an animation editor window for modifying the specified animation file.
    */
   public void openEnemy() {
-    Enemy enemy = new Enemy(fileChooser.getSelectedFile());
+    AssetDescriptor uriFile = new AssetDescriptor(
+            fileChooser.getSelectedFile().toURI());
+    Enemy enemy = new Enemy(uriFile);
     EnemyEditor enemyEditor = new EnemyEditor(enemy);
     desktopPane.add(enemyEditor);
 
@@ -563,7 +563,9 @@ public class MainWindow extends JFrame implements InternalFrameListener {
    */
   public void openCharacter() {
     System.out.println("openCharacter()");
-    Player player = new Player(fileChooser.getSelectedFile());
+    AssetDescriptor uriFile = new AssetDescriptor(
+        fileChooser.getSelectedFile().toURI());
+    Player player = new Player(uriFile);
     CharacterEditor chEditor = new CharacterEditor(player);
     desktopPane.add(chEditor);
 

@@ -66,7 +66,7 @@ public class SpecialMoveEditor extends ToolkitEditorWindow implements InternalFr
   public SpecialMoveEditor() {
     super("New Special Move", true, true, true, true);
 
-    this.move = new SpecialMove();
+    this.move = new SpecialMove(null);
 
     this.setSize(555, 530);
     this.constructWindow();

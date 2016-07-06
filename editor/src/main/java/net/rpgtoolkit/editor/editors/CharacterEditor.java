@@ -37,6 +37,7 @@ import javax.swing.event.InternalFrameListener;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import net.rpgtoolkit.common.assets.Animation;
+import net.rpgtoolkit.common.assets.AssetDescriptor;
 import net.rpgtoolkit.common.assets.Player;
 import net.rpgtoolkit.common.assets.PlayerSpecialMove;
 import net.rpgtoolkit.common.assets.Program;
@@ -1220,7 +1221,9 @@ public class CharacterEditor extends ToolkitEditorWindow implements InternalFram
               + sep + loc);
       if (f.canRead()) {
 //                out.println("loaded special move from location " + loc + "!");
-        return new SpecialMove(f);
+        AssetDescriptor uriFile = new AssetDescriptor(
+                f.toURI());
+        return new SpecialMove(uriFile);
       }
     }
     return null;

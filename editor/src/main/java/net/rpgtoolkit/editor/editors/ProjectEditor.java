@@ -113,7 +113,7 @@ public class ProjectEditor extends ToolkitEditorWindow implements InternalFrameL
     public ProjectEditor() {
         super("New Project", true, true, true, true);
 
-        this.project = new Project("", "");
+        this.project = new Project(null, "", "");
         this.setVisible(true);
     }
 
