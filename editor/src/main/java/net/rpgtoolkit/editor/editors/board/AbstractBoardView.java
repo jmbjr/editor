@@ -19,6 +19,7 @@ import java.util.Iterator;
 import java.util.ListIterator;
 import javax.swing.JPanel;
 
+import net.rpgtoolkit.common.assets.AssetDescriptor;
 import net.rpgtoolkit.common.assets.BoardChangeListener;
 import net.rpgtoolkit.common.assets.BoardChangedEvent;
 import net.rpgtoolkit.common.assets.BoardLayer;
@@ -102,7 +103,8 @@ public abstract class AbstractBoardView extends JPanel implements
    * @param boardEditor The parent BoardEditor for this view.
    */
   public AbstractBoardView(BoardEditor boardEditor) {
-    board = new Board();
+    AssetDescriptor descriptor = new AssetDescriptor(null);
+    board = new Board(descriptor);
     this.boardEditor = boardEditor;
     init();
   }

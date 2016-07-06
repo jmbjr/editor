@@ -12,16 +12,20 @@ import java.awt.Point;
 import java.awt.Rectangle;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JScrollPane;
 import javax.swing.JViewport;
 import net.rpgtoolkit.common.assets.Tile;
 import net.rpgtoolkit.common.assets.Board;
+import net.rpgtoolkit.common.assets.AssetDescriptor;
 import net.rpgtoolkit.editor.editors.board.AbstractBrush;
 import net.rpgtoolkit.common.Selectable;
 import net.rpgtoolkit.editor.ui.MainWindow;
 import net.rpgtoolkit.editor.ui.ToolkitEditorWindow;
+
 
 /**
  *
@@ -62,7 +66,8 @@ public class BoardEditor extends ToolkitEditorWindow {
   public BoardEditor(File file) throws FileNotFoundException {
     super("Board Viewer", true, true, true, true);
     boardMouseAdapter = new BoardMouseAdapter(this);
-    board = new Board(file);
+    AssetDescriptor uriFile = new AssetDescriptor(file.toURI());
+    board = new Board(uriFile);
     init(board, file.getAbsolutePath());
   }
   
@@ -82,11 +87,18 @@ public class BoardEditor extends ToolkitEditorWindow {
   public BoardEditor(String fileName, int width, int height) {
     super("Board Viewer", true, true, true, true);
     boardMouseAdapter = new BoardMouseAdapter(this);
-    board = new Board(width, height);
+    URI file = null;
+      try {
+          file = new URI(fileName);
+      } catch (URISyntaxException ex) {
+          Logger.getLogger(BoardEditor.class.getName()).log(Level.SEVERE, null, ex);
+      }
+    AssetDescriptor uriFile = new AssetDescriptor(file);
+    board = new Board(uriFile, width, height);
     board.addLayer();
-    init(board, fileName);
+    init(board, fileName);  
   }
-
+  
   /**
    *
    * @return
