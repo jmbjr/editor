@@ -359,7 +359,7 @@ public class MainWindow extends JFrame implements InternalFrameListener {
     assetManager.registerSerializer(new LegacyItemSerializer());
     assetManager.registerSerializer(new JsonBoardSerializer());
     assetManager.registerSerializer(new JsonProjectSerializer());
-    assetManager.registerSerializer(new JsonSMoveSerializer());
+    assetManager.registerSerializer(new JsonSpecialMoveSerializer());
   }
 
   public void openProject() {
