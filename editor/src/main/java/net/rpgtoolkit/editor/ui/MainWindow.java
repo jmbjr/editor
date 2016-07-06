@@ -43,7 +43,7 @@ import net.rpgtoolkit.common.assets.TileSet;
 import net.rpgtoolkit.common.assets.files.FileAssetHandleResolver;
 import net.rpgtoolkit.common.assets.serialization.JsonBoardSerializer;
 import net.rpgtoolkit.common.assets.serialization.JsonProjectSerializer;
-import net.rpgtoolkit.common.assets.serialization.JsonSMoveSerializer;
+import net.rpgtoolkit.common.assets.serialization.JsonSpecialMoveSerializer;
 import net.rpgtoolkit.common.assets.serialization.legacy.LegacyAnimatedTileSerializer;
 import net.rpgtoolkit.common.assets.serialization.legacy.LegacyItemSerializer;
 import net.rpgtoolkit.editor.editors.AnimationEditor;
