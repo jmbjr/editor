@@ -200,18 +200,18 @@ public class SpecialMoveEditor extends ToolkitEditorWindow implements InternalFr
 
   private void createSpecialMovePanel() {
     // Configure Class scope components
-    this.moveName = new JTextField(this.move.getName());
-    this.description = new JTextField(this.move.getDescription());
-    this.mpCost = new IntegerField(this.move.getMpCost());
-    this.fightPower = new IntegerField(this.move.getFightPower());
-    this.mpRemovedTarget = new IntegerField(this.move.getMpDrainedFromTarget());
-    this.statusEffect = new JTextField(this.move.getAssociatedStatusEffect());
-    this.animation = new JTextField(this.move.getAssociatedAnimation());
-    this.program = new JTextField(this.move.getRpgcodeProgram());
-    this.battleDriven = new JCheckBox("Battle-Driven (can be used during battle)");
-    this.battleDriven.setSelected(this.move.getCanUseInBattle());
-    this.boardDriven = new JCheckBox("Board-Driven (can be used outside of battle)");
-    this.boardDriven.setSelected(this.move.getCanUseInMenu());
+//    this.moveName = new JTextField(this.move.getName());
+//    this.description = new JTextField(this.move.getDescription());
+//    this.mpCost = new IntegerField(this.move.getMpCost());
+//    this.fightPower = new IntegerField(this.move.getFightPower());
+//    this.mpRemovedTarget = new IntegerField(this.move.getMpDrainedFromTarget());
+//    this.statusEffect = new JTextField(this.move.getAssociatedStatusEffect());
+//    this.animation = new JTextField(this.move.getAssociatedAnimation());
+//    this.program = new JTextField(this.move.getRpgcodeProgram());
+//    this.battleDriven = new JCheckBox("Battle-Driven (can be used during battle)");
+//    this.battleDriven.setSelected(this.move.getCanUseInBattle());
+//    this.boardDriven = new JCheckBox("Board-Driven (can be used outside of battle)");
+//    this.boardDriven.setSelected(this.move.getCanUseInMenu());
 
     // Configure function scope components
     JLabel moveNameLabel = new JLabel("Name");
