@@ -112,7 +112,7 @@ public class BoardNeighboursDialog extends JDialog {
   public BoardNeighboursDialog(JFrame parentFrame, String title, boolean isModal, Board board) {
     super(parentFrame, title, isModal);
     this.board = board;
-    ArrayList<String> neighbours = board.getDirectionalLinks();
+    ArrayList<String> neighbours = (ArrayList<String>) board.getDirectionalLinks();
 
     ///
     /// northNeighbourTextField
