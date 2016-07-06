@@ -387,10 +387,6 @@ public class MainWindow extends JFrame implements InternalFrameListener {
               + fileName + File.separator);
 
       if (fileChooser.getSelectedFile().getName().endsWith(".gam")) {
-        activeProject = new Project(this.fileChooser.getSelectedFile(),
-              System.getProperty("project.path"));
-        activeProject.openBinary();
-      } else {
         try {
         AssetHandle handle = AssetManager.getInstance().deserialize(
                 new AssetDescriptor(fileChooser.getSelectedFile().toURI()));
